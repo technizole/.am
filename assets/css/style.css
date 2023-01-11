@@ -170,6 +170,7 @@ text-decoration: none;
 transition: color .1s linear;
 }
 .flags {
+  display: block;
   width:30px;
   padding: 0 5px;
 }
