@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    background-color: black;
+    
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* HEADER */
+.header {
+    width:100%;
+    padding-top: 30px;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #333;
+}
+
+.header__inner {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.header__logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-right: 300px;
+}
+
+
+
+/* NAVIGATION */
+.nav {
+    font-size: 14px;
+    text-transform: uppercase;
+
+}
+
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    position:relative;
+
+    color:#fff;
+    text-decoration: none;
+
+    transition: color .1s linear;
+}
+
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    display: none;
+
+    background-color: #fff;
+
+    position:absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1;
+
+    transition: opacity .1s linear;
+}
+
+
+.nav__link:hover {
+    color: #fff;
+}
+
+
+.nav__link:hover:after
+{
+   display:block 
+}
+.serf {
+  width: 500px;
+}
+
+.serf1 {
+  margin-left: 450px;
+}
+
+.container2 {
+  background-color: #fff;
+}
+
+.u {
+font-size: larger;
+font-weight: 400px;
+text-align: justify;
+margin:0 auto;
+margin-left:300px ;
+margin-right:300px;
+
+}
+.OPS{
+  font-weight:bold;
+  font-size: x-large;
+  text-align: center;
+}
+.nav1{
+display: inline-block;
+}
+.a {
+ text-align: center;
+}
+.charp1 {
+  text-align: center;
+}
+.opis {
+  font-size:xx-large;
+}
+.contact {
+ background-color: #333; 
+ 
+}
+
+.nav__link1 {
+  display: inline-block;
+  vertical-align: top;
+  margin: 30px 15px;
+  position:relative;
+
+  color:#fff;
+  text-decoration: none;
+  font-size: medium;
+
+  transition: color .1s linear;
+}
+.tittle1 {
+  color: #fff;
+}
+.nav__link2{
+text-align: right;
+vertical-align: top;
+margin: 0 15px;
+
+color:#fff;
+text-decoration: none;
+
+transition: color .1s linear;
+}
+.flags {
+  width:30px;
+}
+.tittle {
+text-align: center;
+}

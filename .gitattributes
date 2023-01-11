@@ -1,0 +1,2 @@
+izogam/** filter=lfs diff=lfs merge=lfs -text
+other/** filter=lfs diff=lfs merge=lfs -text

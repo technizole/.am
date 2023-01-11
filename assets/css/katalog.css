@@ -1,0 +1,45 @@
+.flagusa {
+    float: right;
+    width: 50px;
+    padding: 10px;
+}
+
+.flagrus {
+    position: absolute;
+    left: 0px;
+    width: 50px;
+    padding: 10px;
+}
+
+.flagarm {
+    position: absolute;
+    left: 0px;
+    width: 50px;
+    padding: 10px;
+}
+
+.flagrusv {
+    float: right;
+    width: 50px;
+    padding: 10px;
+}
+
+.catalog {
+    text-align: center;
+    font-size: xx-large;
+    margin-right: 100px;
+}
+
+/* IMAGES */
+.img1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:40%;
+}
+/* TEXT */
+.text{
+    font-size: xx-large;
+    font-weight: 600;
+    text-align: center;
+}
