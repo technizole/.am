@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="assets/css/gallery.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+        <title>TECHNIZOLE</title>
+    </head>
+    <body>
+
+      <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">TECHNIZOLE</div>
+                <nav class="nav">
+                    <a class="nav__link" href="#">Ընկերության մասին</a>
+                    <a class="nav__link" href="katalog-arm.html">Կատալոգ</a>
+                    <a class="nav__link" href="about-arm.html#scroll-to">Կոնտակտներ</a>
+                    <a class="nav__link" href="gallery-arm.html">Պատկերասրահ</a>
+
+                    <a href="about-arm.html">
+                      <img class="flags" src="assets/img/arm.jpg">
+                    </a>
+          
+                    <a href="about-eng.html">
+                      <img class="flags" src="assets/img/usa.png">
+                    </a>
+
+                    <a href="about-rus.html">
+                       <img class="flags" src="assets/img/rus.png">
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header> 
+
+
+
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="izogam/izogam (21).jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="izogam/izogam (22).jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="izogam/izogam (23).jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="izogam/izogam (14).jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+  <img src="izogam/izogam 33.jpg" style="width:100%">
+  </div>
+
+<div class="mySlides1">
+  <img src="izogam/izogam (15).jpg" style="width:100%">
+</div>
+
+<div class="mySlides1">
+  <img src="izogam/izogam (2).jpg" style="width:100%">
+</div>
+
+<div class="mySlides1">
+  <img src="izogam/izogam44.jpg" style="width:100%">
+</div>
+
+<div class="mySlides1">
+  <img src="other/praymer (3).jpg" style="width:100%">
+  </div>
+
+<div class="mySlides1">
+  <img src="other/mastika (8).jpg" style="width:100%">
+</div>
+
+<div class="mySlides1">
+  <img src="other/praymer (1).jpg" style="width:100%">
+</div>
+
+<div class="mySlides1">
+  <img src="other/mastika (6).jpg" style="width:100%">
+</div>
+
+<div class="mySlides1">
+  <img src="other/praymer (4).jpg" style="width:100%">
+</div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+</br>
+</br>
+</br>
+</br>
+
+<script>
+let slideIndex = [1,1];
+let slideId = ["mySlides1"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  let i;
+  let x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+</script>
+<div>
+<video width="460" height="700" controls>
+  <source src="izogam/IZOGAM2.mp4" type="video/mp4">
+</video>
+
+<video width="460" height="700" controls>
+  <source src="izogam/IZOGAMFOLGA.mp4" type="video/mp4">
+</video>
+
+<video width="460" height="700" controls>
+  <source src="izogam/IZOGAM.mp4" type="video/mp4">
+</video>
+
+<video width="460" height="700" controls>
+  <source src="other/MASTIKA.mp4" type="video/mp4">
+</video>
+</div>
+
+           
+<div id="scroll-to" class="contact">
+  <div class="contact-inner">
+  <h1 class="tittle1">Կոնտակտներ</h1>
+  <nav>
+    <a class="nav__link1" href="https://www.facebook.com/IzogamTechnizole">Facebook</a>
+    <a class="nav__link1" href="https://www.instagram.com/technizole/">Instagram</a>
+    <a class="nav__link1" href="https://goo.gl/maps/X2PoxEq9D1v9hzLRA">Հասցե</a>
+    <a class="nav__link1" href = "mailto: enqaxshin@mail.ru">enqaxshin@mail.ru</a>
+    <a class="nav__link1" href="tel:+374033073074" onclick="yaCounter64735753.reachGoal('tel_click');">033073074</a>
+    </nav>
+  </div>
+  </div>
+
+</body>
+</html>
