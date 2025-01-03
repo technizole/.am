@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="arm">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <style>
-        /* General Reset */
+        /* General Styling */
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +20,6 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
             color: #333;
         }
 
@@ -32,7 +31,7 @@
         /* Header */
         .header {
             background: linear-gradient(to right, #333, #333);
-            padding: 10px 0;
+            padding: 10px 20px;
             color: #fff;
         }
 
@@ -40,25 +39,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
         }
 
         .header__logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-family: 'Kaushan Script', cursive;
             font-weight: 700;
         }
 
         .nav {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             align-items: center;
         }
 
         .nav__link {
             font-weight: 500;
             padding: 5px 10px;
-            transition: background 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .nav__link:hover {
@@ -68,14 +66,14 @@
         }
 
         .flags {
-            width: 25px;
-            height: 25px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             transition: transform 0.3s;
         }
 
         .flags:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
 
         /* Slideshow */
@@ -85,91 +83,77 @@
             position: relative;
             overflow: hidden;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .slideshow .slide {
+        .slide {
             display: none;
         }
 
-        .slideshow .slide img {
+        .slide img {
             width: 100%;
-            display: block;
+            border-radius: 10px;
         }
 
-        .slideshow .prev, .slideshow .next {
+        .prev, .next {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            border: none;
+            color: white;
             padding: 10px 15px;
-            cursor: pointer;
+            border: none;
             border-radius: 50%;
+            cursor: pointer;
             font-size: 1.5rem;
-            transition: background 0.3s;
         }
 
-        .slideshow .prev:hover, .slideshow .next:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .slideshow .prev {
+        .prev {
             left: 10px;
         }
 
-        .slideshow .next {
+        .next {
             right: 10px;
         }
 
-        /* Videos */
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Video Section */
         .videos {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
+            gap: 20px;
             padding: 20px;
         }
 
         .videos video {
-            width: 100%;
-            max-width: 460px;
+            max-width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .videos video:hover {
-            transform: scale(1.05);
         }
 
         /* Footer */
         .contact {
             background: #333;
-            color: #fff;
+            color: white;
             text-align: center;
-            padding: 20px 10px;
+            padding: 20px;
         }
 
         .contact h1 {
-            font-size: 1.8rem;
             margin-bottom: 10px;
         }
 
-        .contact nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .contact a {
+        .contact nav a {
+            margin: 0 10px;
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        .contact a:hover {
+        .contact nav a:hover {
             color: #333;
         }
     </style>
@@ -181,29 +165,30 @@
             <nav class="nav">
                 <a class="nav__link" href="#">Ընկերության մասին</a>
                 <a class="nav__link" href="katalog-arm.html">Կատալոգ</a>
-                <a class="nav__link" href="about-arm.html#scroll-to">Կոնտակտներ</a>
+                <a class="nav__link" href="about-arm.html">Կոնտակտներ</a>
                 <a class="nav__link" href="gallery-arm.html">Պատկերասրահ</a>
-                <a href="about-arm.html"><img class="flags" src="assets/img/arm.jpg" alt="Armenian flag"></a>
-                <a href="about-eng.html"><img class="flags" src="assets/img/usa.png" alt="USA flag"></a>
-                <a href="about-rus.html"><img class="flags" src="assets/img/rus.png" alt="Russian flag"></a>
+                <a href="about-arm.html"><img class="flags" src="assets/img/arm.jpg" alt="Հայերեն"></a>
+                <a href="about-eng.html"><img class="flags" src="assets/img/usa.png" alt="Անգլերեն"></a>
+                <a href="about-rus.html"><img class="flags" src="assets/img/rus.png" alt="Ռուսերեն"></a>
             </nav>
         </div>
     </header>
 
     <main>
+        <!-- Slideshow -->
         <section class="slideshow-container">
-            <div class="slideshow" data-slideshow="1">
-                <div class="slide"><img src="izogam/izogam (21).jpg" alt="Slide 1"></div>
-                <div class="slide"><img src="izogam/izogam (22).jpg" alt="Slide 2"></div>
-                <div class="slide"><img src="izogam/izogam (23).jpg" alt="Slide 3"></div>
-            </div>
-            <button class="prev" data-action="prev">&#10094;</button>
-            <button class="next" data-action="next">&#10095;</button>
+            <div class="slide"><img src="izogam/izogam (21).jpg" alt="Image 1"></div>
+            <div class="slide"><img src="izogam/izogam (22).jpg" alt="Image 2"></div>
+            <div class="slide"><img src="izogam/izogam (23).jpg" alt="Image 3"></div>
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
         </section>
 
+        <!-- Videos -->
         <section class="videos">
             <video controls><source src="izogam/IZOGAM2.mp4" type="video/mp4"></video>
             <video controls><source src="izogam/IZOGAMFOLGA.mp4" type="video/mp4"></video>
+            <video controls><source src="other/MASTIKA.mp4" type="video/mp4"></video>
         </section>
     </main>
 
@@ -217,5 +202,21 @@
             <a href="tel:+374033073074">033073074</a>
         </nav>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+    </script>
 </body>
 </html>
