@@ -1,158 +1,221 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="assets/css/gallery.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-        <title>TECHNIZOLE</title>
-    </head>
-    <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNIZOLE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <div class="header__logo">TECHNIZOLE</div>
-                <nav class="nav">
-                    <a class="nav__link" href="#">Ընկերության մասին</a>
-                    <a class="nav__link" href="katalog-arm.html">Կատալոգ</a>
-                    <a class="nav__link" href="about-arm.html#scroll-to">Կոնտակտներ</a>
-                    <a class="nav__link" href="gallery-arm.html">Պատկերասրահ</a>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-                    <a href="about-arm.html">
-                      <img class="flags" src="assets/img/arm.jpg">
-                    </a>
-          
-                    <a href="about-eng.html">
-                      <img class="flags" src="assets/img/usa.png">
-                    </a>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-                    <a href="about-rus.html">
-                       <img class="flags" src="assets/img/rus.png">
-                    </a>
-                </nav>
-            </div>
+        /* Header */
+        .header {
+            background: linear-gradient(to right, #4caf50, #81c784);
+            padding: 10px 0;
+            color: #fff;
+        }
+
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .header__logo {
+            font-size: 1.8rem;
+            font-family: 'Kaushan Script', cursive;
+            font-weight: 700;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav__link {
+            font-weight: 500;
+            padding: 5px 10px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .nav__link:hover {
+            background: #fff;
+            color: #4caf50;
+            border-radius: 5px;
+        }
+
+        .flags {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .flags:hover {
+            transform: scale(1.2);
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .slideshow .slide {
+            display: none;
+        }
+
+        .slideshow .slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .slideshow .prev, .slideshow .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: background 0.3s;
+        }
+
+        .slideshow .prev:hover, .slideshow .next:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .slideshow .prev {
+            left: 10px;
+        }
+
+        .slideshow .next {
+            right: 10px;
+        }
+
+        /* Videos */
+        .videos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .videos video {
+            width: 100%;
+            max-width: 460px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .videos video:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .contact {
+            background: #4caf50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .contact h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .contact nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .contact a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact a:hover {
+            color: #81c784;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">TECHNIZOLE</div>
+            <nav class="nav">
+                <a class="nav__link" href="#">Ընկերության մասին</a>
+                <a class="nav__link" href="katalog-arm.html">Կատալոգ</a>
+                <a class="nav__link" href="about-arm.html#scroll-to">Կոնտակտներ</a>
+                <a class="nav__link" href="gallery-arm.html">Պատկերասրահ</a>
+                <a href="about-arm.html"><img class="flags" src="assets/img/arm.jpg" alt="Armenian flag"></a>
+                <a href="about-eng.html"><img class="flags" src="assets/img/usa.png" alt="USA flag"></a>
+                <a href="about-rus.html"><img class="flags" src="assets/img/rus.png" alt="Russian flag"></a>
+            </nav>
         </div>
-    </header> 
+    </header>
 
+    <main>
+        <section class="slideshow-container">
+            <div class="slideshow" data-slideshow="1">
+                <div class="slide"><img src="izogam/izogam (21).jpg" alt="Slide 1"></div>
+                <div class="slide"><img src="izogam/izogam (22).jpg" alt="Slide 2"></div>
+                <div class="slide"><img src="izogam/izogam (23).jpg" alt="Slide 3"></div>
+            </div>
+            <button class="prev" data-action="prev">&#10094;</button>
+            <button class="next" data-action="next">&#10095;</button>
+        </section>
 
+        <section class="videos">
+            <video controls><source src="izogam/IZOGAM2.mp4" type="video/mp4"></video>
+            <video controls><source src="izogam/IZOGAMFOLGA.mp4" type="video/mp4"></video>
+        </section>
+    </main>
 
-<div class="slideshow-container">
-  <div class="mySlides1">
-    <img src="izogam/izogam (21).jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides1">
-    <img src="izogam/izogam (22).jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides1">
-    <img src="izogam/izogam (23).jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides1">
-    <img src="izogam/izogam (14).jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides1">
-  <img src="izogam/izogam 33.jpg" style="width:100%">
-  </div>
-
-<div class="mySlides1">
-  <img src="izogam/izogam (15).jpg" style="width:100%">
-</div>
-
-<div class="mySlides1">
-  <img src="izogam/izogam (2).jpg" style="width:100%">
-</div>
-
-<div class="mySlides1">
-  <img src="izogam/izogam44.jpg" style="width:100%">
-</div>
-
-<div class="mySlides1">
-  <img src="other/praymer (3).jpg" style="width:100%">
-  </div>
-
-<div class="mySlides1">
-  <img src="other/mastika (8).jpg" style="width:100%">
-</div>
-
-<div class="mySlides1">
-  <img src="other/praymer (1).jpg" style="width:100%">
-</div>
-
-<div class="mySlides1">
-  <img src="other/mastika (6).jpg" style="width:100%">
-</div>
-
-<div class="mySlides1">
-  <img src="other/praymer (4).jpg" style="width:100%">
-</div>
-
-  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-</div>
-
-</br>
-</br>
-</br>
-</br>
-
-<script>
-let slideIndex = [1,1];
-let slideId = ["mySlides1"]
-showSlides(1, 0);
-showSlides(1, 1);
-
-function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
-}
-
-function showSlides(n, no) {
-  let i;
-  let x = document.getElementsByClassName(slideId[no]);
-  if (n > x.length) {slideIndex[no] = 1}    
-  if (n < 1) {slideIndex[no] = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex[no]-1].style.display = "block";  
-}
-</script>
-<div>
-<video width="460" height="700" controls>
-  <source src="izogam/IZOGAM2.mp4" type="video/mp4">
-</video>
-
-<video width="460" height="700" controls>
-  <source src="izogam/IZOGAMFOLGA.mp4" type="video/mp4">
-</video>
-
-<video width="460" height="700" controls>
-  <source src="izogam/IZOGAM.mp4" type="video/mp4">
-</video>
-
-<video width="460" height="700" controls>
-  <source src="other/MASTIKA.mp4" type="video/mp4">
-</video>
-</div>
-
-           
-<div id="scroll-to" class="contact">
-  <div class="contact-inner">
-  <h1 class="tittle1">Կոնտակտներ</h1>
-  <nav>
-    <a class="nav__link1" href="https://www.facebook.com/IzogamTechnizole">Facebook</a>
-    <a class="nav__link1" href="https://www.instagram.com/technizole/">Instagram</a>
-    <a class="nav__link1" href="https://goo.gl/maps/X2PoxEq9D1v9hzLRA">Հասցե</a>
-    <a class="nav__link1" href = "mailto: enqaxshin@mail.ru">enqaxshin@mail.ru</a>
-    <a class="nav__link1" href="tel:+374033073074" onclick="yaCounter64735753.reachGoal('tel_click');">033073074</a>
-    </nav>
-  </div>
-  </div>
-
+    <footer class="contact">
+        <h1>Կոնտակտներ</h1>
+        <nav>
+            <a href="https://www.facebook.com/IzogamTechnizole">Facebook</a>
+            <a href="https://www.instagram.com/technizole/">Instagram</a>
+            <a href="https://goo.gl/maps/X2PoxEq9D1v9hzLRA">Հասցե</a>
+            <a href="mailto:enqaxshin@mail.ru">enqaxshin@mail.ru</a>
+            <a href="tel:+374033073074">033073074</a>
+        </nav>
+    </footer>
 </body>
 </html>
