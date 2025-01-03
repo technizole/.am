@@ -41,7 +41,7 @@ img:hover {
 .h1 {
   text-align: center;
   font-size: 2.5rem;
-  color: #4caf50;
+  color: #333;
   margin: 40px 0;
   font-weight: 700;
 }
@@ -71,7 +71,7 @@ img:hover {
 
 /* Hover effects for navigation buttons */
 .prev:hover, .next:hover {
-  background-color: #4caf50;
+  background-color: #333;
   transform: scale(1.1);
 }
 
