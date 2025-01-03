@@ -1,45 +1,91 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Flag Styles */
+.flagusa, .flagrus, .flagarm, .flagrusv {
+    width: 50px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Flag USA (right side) */
 .flagusa {
     float: right;
-    width: 50px;
-    padding: 10px;
 }
 
-.flagrus {
+/* Flag Russia (absolute, left) */
+.flagrus, .flagarm {
     position: absolute;
-    left: 0px;
-    width: 50px;
-    padding: 10px;
+    left: 0;
 }
 
-.flagarm {
-    position: absolute;
-    left: 0px;
-    width: 50px;
-    padding: 10px;
-}
-
+/* Flag Russia (right side) */
 .flagrusv {
     float: right;
-    width: 50px;
-    padding: 10px;
 }
 
+/* Hover effects for flags */
+.flagusa:hover, .flagrus:hover, .flagarm:hover, .flagrusv:hover {
+    transform: scale(1.1);
+}
+
+/* Catalog Section */
 .catalog {
     text-align: center;
-    font-size: xx-large;
+    font-size: 2.5rem; /* Adjusted for a more readable font size */
+    font-weight: 700;
     margin-right: 100px;
+    color: #4caf50; /* Added a color to match the modern design */
 }
 
-/* IMAGES */
+/* Images */
 .img1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width:40%;
+    width: 40%;
+    border-radius: 8px; /* Smooth edges for images */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow to make images stand out */
+    transition: transform 0.3s ease;
 }
-/* TEXT */
-.text{
-    font-size: xx-large;
+
+/* Hover effect for images */
+.img1:hover {
+    transform: scale(1.05);
+}
+
+/* Text Styling */
+.text {
+    font-size: 2rem; /* Slightly smaller font size for better readability */
     font-weight: 600;
     text-align: center;
+    color: #333; /* Dark color for better contrast */
+    margin-top: 20px;
+    line-height: 1.5; /* Improved line height for better text spacing */
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .catalog {
+        font-size: 1.8rem;
+        margin-right: 20px;
+    }
+
+    .img1 {
+        width: 60%; /* Slightly larger images on smaller screens */
+    }
+
+    .text {
+        font-size: 1.6rem; /* Adjust text size for mobile screens */
+    }
 }
