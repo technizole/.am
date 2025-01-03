@@ -1,138 +1,218 @@
 <!DOCTYPE html>
-<head>        
+<html lang="ru">
+<head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/katalog.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <title>TECHNIZOLE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .header {
+            background: linear-gradient(to right, #4caf50, #81c784);
+            padding: 20px 0;
+            color: white;
+        }
+
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header__logo {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 2.5rem;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav__link {
+            font-weight: 500;
+            padding: 8px 15px;
+            color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .nav__link:hover {
+            background-color: #fff;
+            color: #4caf50;
+        }
+
+        .flags {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .flags:hover {
+            transform: scale(1.2);
+        }
+
+        .img1 {
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .text {
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 10px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .text:hover {
+            color: #4caf50;
+        }
+
+        .contact {
+            background-color: #4caf50;
+            padding: 30px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact nav a {
+            font-size: 1.1rem;
+            color: white;
+            margin: 10px 15px;
+            transition: color 0.3s;
+        }
+
+        .contact nav a:hover {
+            color: #81c784;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .product-images {
+            margin-bottom: 50px;
+        }
+
+        .product-images div {
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
 
     <header class="header">
         <div class="container">
-             <div class="header__inner">
-                 <div class="header__logo">TECHNIZOLE</div>
-                   <nav class="nav">
-                         <a class="nav__link" href="#">О КОМПАНИИ</a>
-                         <a class="nav__link" href="katalog-rus.html">КАТАЛОГ</a>
-                         <a class="nav__link" href="about-rus.html#scroll-to">КОНТАКТЫ</a>
-                         <a class="nav__link" href="gallery.html">ГАЛЕРЕЯ</a>
-     
-                         <a href="about-arm.html">
-                           <img class="flags" src="assets/img/arm.jpg">
-                         </a>
-               
-                         <a href="about-eng.html">
-                           <img class="flags" src="assets/img/usa.png">
-                         </a>
-     
-                         <a href="about-rus.html">
-                           <img class="flags" src="assets/img/rus.png">
-                         </a>
-                   </nav>
-             </div>
-         </div>
-     </header> 
+            <div class="header__inner">
+                <div class="header__logo">TECHNIZOLE</div>
+                <nav class="nav">
+                    <a class="nav__link" href="#">О КОМПАНИИ</a>
+                    <a class="nav__link" href="katalog-rus.html">КАТАЛОГ</a>
+                    <a class="nav__link" href="about-rus.html#scroll-to">КОНТАКТЫ</a>
+                    <a class="nav__link" href="gallery.html">ГАЛЕРЕЯ</a>
 
-</br>
-</br>
-</br>
+                    <a href="about-arm.html">
+                      <img class="flags" src="assets/img/arm.jpg" alt="Armenian">
+                    </a>
 
-    <div>
-        <img class="img1" src="izogam/izogam (13).jpg">
-        <div class="text">Изогам на битумной основе с полиэтиленовым</div>
-        <div class="text">покрытием на каркасной комбиткане</div>
+                    <a href="about-eng.html">
+                      <img class="flags" src="assets/img/usa.png" alt="USA">
+                    </a>
+
+                    <a href="about-rus.html">
+                       <img class="flags" src="assets/img/rus.png" alt="Russian">
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="product-images">
+        <div>
+            <img class="img1" src="izogam/izogam (13).jpg" alt="Изогам Image 1">
+            <div class="text">Изогам на битумной основе с полиэтиленовым</div>
+            <div class="text">покрытием на каркасной комбиткане</div>
+        </div>
+
+        <div>
+            <img class="img1" src="izogam/izogamposipka.jpg" alt="Изогам Image 2">
+            <div class="text">Изогам на битумной основе с посыпкой</div>
+            <div class="text">на каркасной комбиткане</div>
+        </div>
+
+        <div>
+            <img class="img1" src="izogam/izogam (11).jpg" alt="Изогам Image 3">
+            <div class="text">Изогам на битумной основе с покрытием</div>
+            <div class="text">алюминевой фольгой на каркасной комбиткане</div>
+        </div>
+
+        <div>
+            <img class="img1" src="other/praymer (2).jpg" alt="Primer Image">
+            <div class="text">Праймер предназначен для нанесения на бетонных покрытиях до приклеивания</div>
+            <div class="text">мягкого кровельного материала на бетонных основах</div>
+        </div>
+        
+        <div>
+            <img class="img1" src="other/mastika (6).jpg" alt="Mastika Image">
+            <div class="text">Мастика на битумной основе для гидроизоляции бетона</div>
+            <div class="text">, железа и дерева</div>
+        </div>
+
+        <div>
+            <img class="img1" src="izogam/izogammmmm.jpg" alt="Izogam Final Image">
+            <div class="text">Комбиткань</div>
+        </div>
+    </section>
+
+    <div id="scroll-to" class="contact">
+        <div class="contact-inner">
+            <h1 class="tittle1">КОНТАКТЫ</h1>
+            <nav>
+                <a class="nav__link1" href="https://www.facebook.com/IzogamTechnizole">Facebook</a>
+                <a class="nav__link1" href="https://www.instagram.com/technizole/">Instagram</a>
+                <a class="nav__link1" href="https://goo.gl/maps/X2PoxEq9D1v9hzLRA">Локация</a>
+                <a class="nav__link1" href="mailto:enqaxshin@mail.ru">enqaxshin@mail.ru</a>
+                <a class="nav__link1" href="tel:+374033073074">033073074</a>
+            </nav>
+        </div>
     </div>
-
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-
-    <div>
-        <img class="img1" src="izogam/izogamposipka.jpg">
-        <div class="text">Изогам на битумной основе с посыпкой</div>
-        <div class="text">на каркасной комбиткане</div>
-    </div>
-
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-
-    <div>
-        <img class="img1" src="izogam/izogam (11).jpg">
-        <div class="text">Изогам на битумной основе с покрытием</div>
-        <div class="text">алюминевой фольгой на каркасной комбиткане</div>
-    </div>
-
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-
-    <div>
-        <img class="img1" src="other/praymer (2).jpg">
-        <div class="text">Праймер предназначен для нанесения на бетонных покрытиях до приклеивания</div>
-        <div class="text">мягкого кровельного материала на бетонных основах</div>
-    </div>
-
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-
-    <div>
-        <img class="img1" src="other/mastika (6).jpg">
-        <div class="text">Мастика на битумной основе для гидроизоляции бетона</div>
-        <div class="text">,железа и дерева</div>
-    </div>
-
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-
-<div>
-    <img class="img1" src="izogam/izogammmmm.jpg">
-    <div class="text">Комбиткань</div>
-</div>
-
-<div id="scroll-to" class="contact">
-    <div class="contact-inner">
-       <h1 class="tittle1">КОНТАКТЫ</h1>
-       <nav>
-         <a class="nav__link1" href="https://www.facebook.com/IzogamTechnizole">Facebook</a>
-         <a class="nav__link1" href="https://www.instagram.com/technizole/">Instagram</a>
-         <a class="nav__link1" href="https://goo.gl/maps/X2PoxEq9D1v9hzLRA">Локация</a>
-         <a class="nav__link1" href = "mailto: enqaxshin@mail.ru">enqaxshin@mail.ru</a>
-         <a class="nav__link1" href="tel:+374033073074" onclick="yaCounter64735753.reachGoal('tel_click');">033073074</a>
-       </nav>
-   </div>
-</div>
 
 </body>
 </html>
