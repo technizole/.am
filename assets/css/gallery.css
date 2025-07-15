@@ -1,35 +1,32 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Gallery Specific Styles */
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f4f4f4;
+/* Main gallery section title */
+.gallery-title { /* New class for the gallery heading */
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: #333;
+  margin: 40px 0 30px; /* Adjusted margins for better spacing */
 }
 
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
-  margin: auto;
+  margin: 0 auto 50px; /* Centered with bottom margin */
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
 }
 
-/* Images */
-img {
+/* Images within slideshow */
+.slideshow-container img {
   vertical-align: middle;
   width: 100%;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-img:hover {
-  transform: scale(1.05);
+  height: auto; /* Allow height to adjust */
+  max-height: 550px; /* Max height for larger screens */
+  object-fit: contain; /* Ensure entire image is visible, no cropping */
+  display: block; /* Removes extra space below images */
 }
 
 /* Hide all slides by default */
@@ -37,66 +34,86 @@ img:hover {
   display: none;
 }
 
-/* Style for the title */
-.h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #333;
-  margin: 40px 0;
-  font-weight: 700;
-}
-
-/* Navigation buttons */
+/* Navigation buttons (Prev/Next) */
 .prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
+  padding: 18px 22px; /* Increased padding for larger clickable area */
   margin-top: -22px;
-  color: #fff;
+  color: #fff; /* White arrows */
   font-weight: bold;
-  font-size: 18px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  user-select: none;
-  z-index: 10;
+  font-size: 24px; /* Larger arrows */
+  transition: background-color 0.3s ease;
+  border-radius: 0 5px 5px 0; /* Rounded corners */
+  user-select: none; /* Prevent text selection */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
 }
 
 /* Position the "next button" to the right */
 .next {
   right: 0;
+  border-radius: 5px 0 0 5px; /* Rounded corners for right button */
 }
 
-/* Hover effects for navigation buttons */
+/* On hover, add a black background with a little more opacity */
 .prev:hover, .next:hover {
-  background-color: #333;
-  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.prev {
-  left: 0;
-  border-radius: 50% 0 0 50%;
+/* Video Section */
+.videos {
+  display: grid; /* Use CSS Grid for video layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 30px; /* Space between videos */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto 50px; /* Centered with bottom margin */
 }
 
-.next {
-  right: 0;
-  border-radius: 0 50% 50% 0;
+.videos video {
+  width: 100%;
+  height: auto;
+  min-height: 200px; /* Minimum height for videos */
+  background-color: #000; /* Black background for video player */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Adding responsiveness */
+/* Responsive Design for Gallery */
 @media (max-width: 768px) {
-  .slideshow-container {
-      max-width: 90%;
+  .gallery-title {
+    font-size: 2rem;
+    margin: 30px 0 20px;
   }
 
-  .h1 {
-      font-size: 1.8rem;
+  .slideshow-container {
+    max-width: 90%; /* Adjust width for smaller screens */
   }
 
   .prev, .next {
-      padding: 12px;
-      font-size: 16px;
+    padding: 14px 18px;
+    font-size: 20px;
+  }
+
+  .videos {
+    grid-template-columns: 1fr; /* Stack videos on smaller screens */
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .videos video {
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slideshow-container {
+    border-radius: 0; /* Remove border radius on very small screens for full width */
+  }
+
+  .videos {
+    padding: 10px;
   }
 }

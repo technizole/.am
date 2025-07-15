@@ -1,91 +1,95 @@
-/* General Styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Katalog Specific Styles */
+
+/* Remove any duplicate global styles if they were here */
+/* (e.g., *, body, a - these are now in style.css) */
+
+/* Main catalog section heading */
+.catalog-title { /* Changed from .catalog to .catalog-title for clarity and less conflict */
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 40px 0 30px; /* Adjusted margins for better spacing */
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+/* Container for catalog items */
+.catalog-grid {
+  display: grid; /* Use CSS Grid for a powerful and flexible layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
+  gap: 30px; /* Space between grid items */
+  padding: 0 20px; /* Padding for the grid */
+  max-width: 1200px;
+  margin: 0 auto 50px; /* Center the grid and add bottom margin */
 }
 
-/* Flag Styles */
-.flagusa, .flagrus, .flagarm, .flagrusv {
-    width: 50px;
-    padding: 10px;
-    transition: transform 0.3s ease;
+/* Individual catalog item (product card) */
+.catalog-item { /* New class for each product block */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* More prominent shadow */
+  overflow: hidden; /* Ensures border-radius applies to image */
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center content within the card */
+  padding-bottom: 20px; /* Padding at the bottom of the card */
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Flag USA (right side) */
-.flagusa {
-    float: right;
+.catalog-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
 }
 
-/* Flag Russia (absolute, left) */
-.flagrus, .flagarm {
-    position: absolute;
-    left: 0;
+/* Images within catalog items */
+.catalog-item .img1 {
+  display: block;
+  width: 100%; /* Make image fill its container */
+  height: 250px; /* Fixed height for consistency, adjust as needed */
+  object-fit: cover; /* Crop image to fit without distortion */
+  border-radius: 10px 10px 0 0; /* Apply border-radius only to top corners */
+  margin-bottom: 15px; /* Space between image and text */
+  box-shadow: none; /* Remove individual image shadow as card has one */
+  transition: none; /* Remove individual image transition as card has one */
 }
 
-/* Flag Russia (right side) */
-.flagrusv {
-    float: right;
+/* Text styling for product descriptions */
+.catalog-item .text {
+  font-size: 1.1rem; /* Reduced font size for better readability */
+  line-height: 1.5;
+  color: #555; /* Softer color for text */
+  text-align: center;
+  padding: 0 15px; /* Padding for text inside the card */
+  margin-bottom: 10px; /* Spacing between text lines/blocks */
 }
 
-/* Hover effects for flags */
-.flagusa:hover, .flagrus:hover, .flagarm:hover, .flagrusv:hover {
-    transform: scale(1.1);
-}
-
-/* Catalog Section */
-.catalog {
-    text-align: center;
-    font-size: 2.5rem; /* Adjusted for a more readable font size */
-    font-weight: 700;
-    margin-right: 100px;
-    color: #333; /* Added a color to match the modern design */
-}
-
-/* Images */
-.img1 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-    border-radius: 8px; /* Smooth edges for images */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow to make images stand out */
-    transition: transform 0.3s ease;
-}
-
-/* Hover effect for images */
-.img1:hover {
-    transform: scale(1.05);
-}
-
-/* Text Styling */
-.text {
-    font-size: 2rem; /* Slightly smaller font size for better readability */
-    font-weight: 600;
-    text-align: center;
-    color: #333; /* Dark color for better contrast */
-    margin-top: 20px;
-    line-height: 1.5; /* Improved line height for better text spacing */
-}
-
-/* Responsiveness for smaller screens */
+/* Responsive adjustments for catalog */
 @media (max-width: 768px) {
-    .catalog {
-        font-size: 1.8rem;
-        margin-right: 20px;
-    }
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width for smaller screens */
+    gap: 20px;
+  }
 
-    .img1 {
-        width: 60%; /* Slightly larger images on smaller screens */
-    }
+  .catalog-title {
+    font-size: 2rem;
+    margin: 30px 0 20px;
+  }
 
-    .text {
-        font-size: 1.6rem; /* Adjust text size for mobile screens */
-    }
+  .catalog-item .img1 {
+    height: 200px; /* Smaller image height on mobile */
+  }
+
+  .catalog-item .text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    padding: 0 15px;
+  }
+
+  .catalog-item .img1 {
+    height: 180px;
+  }
 }

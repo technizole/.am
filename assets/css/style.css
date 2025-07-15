@@ -1,216 +1,315 @@
-/* General Body Styles */
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px; /* Slightly larger for better readability */
-  line-height: 1.6;
-  color: #333;
-  background-color: #f4f4f4; /* Light background for modern feel */
-}
-
-/* Box-sizing for all elements */
+/* Global Reset and Box-sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Reset margins for heading elements */
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+/* Base Body Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f8f8; /* A slightly lighter background for a modern feel */
+  -webkit-font-smoothing: antialiased; /* Better font rendering */
+  -moz-osx-font-smoothing: grayscale; /* Better font rendering */
+}
+
+/* Hyperlink Styles */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Container for responsive layout */
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px; /* Slightly reduced max-width for better content flow */
   margin: 0 auto;
+  padding: 0 20px; /* Add horizontal padding for smaller screens */
 }
 
 /* HEADER */
 .header {
   width: 100%;
   padding: 15px 0;
-  position: sticky;
+  position: sticky; /* Keeps header visible on scroll */
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: #333;
+  background-color: #333; /* Dark background for the header */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-/* Header inner content alignment */
 .header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
-/* Logo styles */
 .header__logo {
-  font-size: 30px;
+  font-family: 'Kaushan Script', cursive; /* Use the script font for logo */
+  font-size: 32px;
+  color: #fff;
+  text-transform: uppercase;
   font-weight: 700;
-  color: #ffffff;
-  margin-right: 200px;
+  margin-right: 20px; /* Spacing for logo */
 }
 
-/* NAVIGATION */
+/* Main Navigation */
 .nav {
   display: flex;
   align-items: center;
-  font-size: 14px;
-  text-transform: uppercase;
+  flex-wrap: wrap; /* Allow navigation items to wrap */
+  gap: 15px; /* Space between nav items */
 }
 
 .nav__link {
-  margin: 0 15px;
-  position: relative;
   color: #fff;
-  text-decoration: none;
-  transition: color 0.1s linear;
+  font-size: 1rem;
+  padding: 8px 15px;
+  transition: color 0.2s linear, background-color 0.2s linear, transform 0.2s ease;
+  border-radius: 5px;
+  position: relative; /* For underline effect */
+  overflow: hidden; /* For underline animation */
 }
 
-/* Underline effect on nav links */
-.nav__link:after {
+.nav__link:hover {
+  color: #f0f0f0; /* Slightly lighter on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.nav__link::after {
   content: "";
   display: block;
-  width: 100%;
-  height: 3px;
-  display: none;
-  background-color: #fff;
+  width: 0;
+  height: 2px;
+  background-color: #f0f0f0; /* Underline color */
   position: absolute;
   left: 0;
-  top: 100%;
-  z-index: 1;
-  transition: opacity 0.1s linear;
+  bottom: 0;
+  transition: width 0.3s ease-out; /* Underline animation */
 }
 
-/* Hover effect for nav links */
-.nav__link:hover {
-  color: #fff;
+.nav__link:hover::after {
+  width: 100%;
 }
 
-/* Underline appears on hover */
-.nav__link:hover:after {
-  display: block;
-}
-
-/* Centering specific sections */
-.serf {
-  width: 500px;
-  margin: 0 auto;
-}
-
-/* Styling for the second container */
-.container2 {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-/* Text styling for general content */
-.u {
-  font-size: larger;
-  font-weight: 400;
-  text-align: justify;
-}
-
-/* Text for special emphasis (like headings) */
-.OPS {
-  font-weight: bold;
-  font-size: x-large;
-  text-align: center;
-}
-
-/* Navigation styling for special links */
-.nav1 {
-  display: inline-block;
-}
-
-/* Align text to the center */
-.a, .charp1, .tittle {
-  text-align: center;
-}
-
-/* Large text style for description sections */
-.opis {
-  font-size: xx-large;
-}
-
-/* Contact section background color */
-.contact {
-  background-color: #333;
-}
-
-/* Contact inner container */
-.contact-inner {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-/* Navigation links in the contact section */
-.nav__link1 {
-  display: inline-block;
-  vertical-align: top;
-  margin: 30px 15px;
-  position: relative;
-  color: #fff;
-  text-decoration: none;
-  font-size: medium;
-  transition: color 0.1s linear;
-}
-
-/* Title for contact section */
-.tittle1 {
-  color: #fff;
-}
-
-/* Extra navigation link styling */
-.nav__link2 {
-  text-align: right;
-  vertical-align: top;
-  margin: 0 15px;
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.1s linear;
-}
-
-/* Flags styling for layout */
+/* Flag Icons */
 .flags {
-  display: block;
-  width: 30px;
-  padding: 0 5px;
+  width: 28px; /* Slightly smaller flags */
+  height: auto;
+  border-radius: 3px; /* Slightly rounded corners for flags */
+  transition: transform 0.2s ease;
+  display: block; /* Ensure flags behave as blocks for consistent sizing */
 }
 
-/* Center alignment for certain titles */
-.tittle {
-  text-align: center;
+.flags:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
 }
+
+/* Section for About Us page */
+.container2 {
+    max-width: 900px; /* Optimized width for content readability */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container2 .tittle {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Darker title color */
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.container2 .u div {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: justify; /* Justify text for a cleaner look */
+}
+
+.container2 .OPS {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.serf1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow certificates to wrap on smaller screens */
+    gap: 20px; /* Space between certificates */
+    margin-top: 20px;
+}
+
+.serf {
+    max-width: 45%; /* Adjust width for two columns on larger screens */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.serf:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section (Footer) */
+.contact {
+  background-color: #222; /* Darker background for footer */
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  margin-top: 50px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.contact-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact .tittle1 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.contact nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between contact links */
+}
+
+.nav__link1 {
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.2s linear, transform 0.2s ease;
+  position: relative;
+  padding-bottom: 5px; /* Space for underline */
+}
+
+.nav__link1:hover {
+  color: #a0a0a0; /* Lighter grey on hover */
+  transform: translateY(-2px);
+}
+
+.nav__link1::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #a0a0a0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease-out;
+}
+
+.nav__link1:hover::after {
+  width: 100%;
+}
+
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .header__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
   .header__logo {
-      font-size: 24px; /* Adjust logo size for smaller screens */
-      margin-right: 50px; /* Adjust spacing for mobile */
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 
   .nav {
-      flex-direction: column; /* Stack navigation links vertically */
-      align-items: flex-start; /* Align links to the left */
+    flex-direction: column;
+    gap: 10px;
   }
 
   .nav__link {
-      margin: 10px 0; /* Adjust link margin for mobile */
+    padding: 5px 10px;
+    font-size: 0.9rem;
   }
 
-  .container2, .contact-inner {
-      max-width: 100%; /* Allow containers to take full width on smaller screens */
+  .flags {
+    margin: 5px auto; /* Center flags if in column layout */
   }
 
   .serf {
-      width: 100%; /* Make the serf section full width on mobile */
+    max-width: 90%; /* Stack certificates on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
   }
 
-  .tittle1, .OPS, .opis {
-      font-size: 1.5rem; /* Adjust font size for mobile */
+  .container {
+    padding: 0 15px;
+  }
+
+  .header__logo {
+    font-size: 28px;
+  }
+
+  .container2 .tittle {
+    font-size: 2rem;
+  }
+
+  .container2 .u div {
+    font-size: 1rem;
+  }
+
+  .container2 .OPS {
+    font-size: 1.7rem;
+  }
+
+  .contact .tittle1 {
+    font-size: 1.7rem;
+  }
+
+  .nav__link1 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header__logo {
+    font-size: 24px;
+  }
+
+  .nav__link {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+  }
+
+  .contact nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .serf {
+    max-width: 100%;
   }
 }
